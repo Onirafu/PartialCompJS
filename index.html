@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+</head>
+
+<body>
+    <div id="header">
+        Hello
+    </div>
+    <div id="content">
+
+    </div>
+
+
+    <!-- JS -->
+    <script src="components.js"></script>
+    <script>
+        DomReady(() => {
+            // Header
+            const header = new ContentLoader('partials/header', 'header');
+            //Content
+            var i = 0;
+            var lorem = [];
+            while(i <= 10){
+                var newlorem = document.createElement('div');
+                document.getElementById('content').appendChild(newlorem);
+                newlorem.id = "mylorem" + i;
+                lorem[i] = new ContentLoader('partials/lorem', 'mylorem'+i);
+                i++;    
+            }
+            //Footer
+        });
+    </script>
+</body>
+
+</html>
